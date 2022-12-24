@@ -1239,6 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &147509231
@@ -5921,6 +5922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1017510518
@@ -9534,6 +9536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
   rb: {fileID: 896480184}
@@ -10849,8 +10852,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0
   numberEnemy: 3
-  directionUp: 0
   speed: 1.2
+  directionUp: 0
   rateCountSub: 3
   rateCount: 5
   coinPrefab: {fileID: 3541723246424219644}
@@ -10943,8 +10946,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0
   numberEnemy: 3
-  directionUp: 1
   speed: 1.1
+  directionUp: 1
   rateCountSub: 2
   rateCount: 4
   coinPrefab: {fileID: 3541723246424219644}
@@ -11003,8 +11006,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0
   numberEnemy: 4
-  directionUp: 1
   speed: 1.3
+  directionUp: 1
   rateCountSub: 3
   rateCount: 4
   coinPrefab: {fileID: 3541723246424219644}
@@ -11499,6 +11502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138653266978242
@@ -11637,8 +11641,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0
   numberEnemy: 3
-  directionUp: 0
   speed: 1
+  directionUp: 0
   rateCountSub: 3
   rateCount: 4
   coinPrefab: {fileID: 3541723246424219644}
@@ -12190,6 +12194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138653495591098
@@ -12637,7 +12642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1196138653638742585
 Transform:
   m_ObjectHideFlags: 0
@@ -12927,8 +12932,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0.3
   numberEnemy: 3
-  directionUp: 0
   speed: 1.2
+  directionUp: 0
   rateCountSub: 1
   rateCount: 2
   coinPrefab: {fileID: 3541723246424219644}
@@ -13260,8 +13265,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0
   numberEnemy: 2
-  directionUp: 1
   speed: 1
+  directionUp: 1
   rateCountSub: 1
   rateCount: 2
   coinPrefab: {fileID: 3541723246424219644}
@@ -13330,6 +13335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138653847728091
@@ -13768,6 +13774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138653998909429
@@ -14048,6 +14055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138654169028205
@@ -14128,6 +14136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138654195201935
@@ -14182,8 +14191,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0
   numberEnemy: 2
-  directionUp: 1
   speed: 1.2
+  directionUp: 1
   rateCountSub: 2
   rateCount: 3
   coinPrefab: {fileID: 3541723246424219644}
@@ -14209,7 +14218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1196138654207046966
 Transform:
   m_ObjectHideFlags: 0
@@ -15548,8 +15557,8 @@ MonoBehaviour:
   conveyerDirection: 1
   speedConveyer: 1
   numberEnemy: 3
-  directionUp: 0
   speed: 1
+  directionUp: 0
   rateCountSub: 2
   rateCount: 3
   coinPrefab: {fileID: 3541723246424219644}
@@ -15748,8 +15757,8 @@ MonoBehaviour:
   conveyerDirection: 0
   speedConveyer: 0.3
   numberEnemy: 4
-  directionUp: 0
   speed: 1.3
+  directionUp: 0
   rateCountSub: 2
   rateCount: 3
   coinPrefab: {fileID: 3541723246424219644}
@@ -16531,7 +16540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1196138654935305841
 Transform:
   m_ObjectHideFlags: 0
@@ -17101,6 +17110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138655130929075
@@ -17392,6 +17402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posTarget: {fileID: 0}
+  spawnPoint: {fileID: 0}
   direction: 0
   speed: 0
 --- !u!1 &1196138655218485852
@@ -18769,7 +18780,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: SavingScore.json
   directionFile: /SaveData/
-  score: 0
 --- !u!1 &7406381860342369157
 GameObject:
   m_ObjectHideFlags: 0

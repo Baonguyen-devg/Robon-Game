@@ -3,6 +3,7 @@ using UnityEngine;
 public class Movement : RepeatMonobehaviour
 {
     public Transform posTarget;
+    public GameObject spawnPoint;
 
     // true: up  false: down
     public bool direction;
@@ -12,7 +13,15 @@ public class Movement : RepeatMonobehaviour
 
     protected virtual void Update()
     {
+        this.ChangeStatus();
         this.Move();
+    }
+
+    public virtual void ChangeStatus()
+    {
+        if (this.spawnPoint == null) return;
+        SpawnPoint key = this.spawnPoint.GetComponent<SpawnPoint>();
+        this.ChangeSvD(key.directionUp, key.speed);
     }
 
     public virtual void ChangeSvD(bool direct, float speedValue)
@@ -23,7 +32,7 @@ public class Movement : RepeatMonobehaviour
 
     protected virtual void Move()
     {
-        if (this.posTarget == null) return;
+        if (this.posTarget == null || this.spawnPoint == null) return;
         float distance = Vector3.Distance(transform.position, this.posTarget.position);
 
         if (distance > 0.01f) this.MoveToTarget();

@@ -23,6 +23,8 @@ public class Conveyer : MonoBehaviour
             this.player.transform.SetParent(this.transform);
 
             this.robonControl.posTarget = GetComponentInChildren<Movement>().posTarget;
+            this.robonControl.spawnPoint = GetComponentInChildren<Movement>().spawnPoint;
+
             this.robonControl.ChangeSvD(key.conveyerDirection, key.speedConveyer);
 
         }
@@ -30,6 +32,7 @@ public class Conveyer : MonoBehaviour
         {
             this.player.transform.SetParent(null);
             this.robonControl.posTarget = null;
+            this.robonControl.spawnPoint = null;
         }
     }
 

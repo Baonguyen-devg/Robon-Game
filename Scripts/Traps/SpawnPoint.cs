@@ -14,8 +14,8 @@ public class SpawnPoint : RepeatMonobehaviour
     [Header("Spawn Information")]
 
     [SerializeField] protected int numberEnemy;
-    [SerializeField] protected bool directionUp;
-    [SerializeField] protected float speed;
+    public float speed;
+    public bool directionUp;
 
     [SerializeField] float rateCountSub;
     [SerializeField] float rateCount;
@@ -47,7 +47,8 @@ public class SpawnPoint : RepeatMonobehaviour
 
     private void Update()
     {
-        this.PointMove(this.FindRoot().gameObject);
+        GameObject key = this.FindRoot().gameObject;
+        this.PointMove(key);
     }
 
     protected virtual void SpawnEnemy()
@@ -96,8 +97,9 @@ public class SpawnPoint : RepeatMonobehaviour
         key.transform.position = this.FindRoot().position;
 
         Movement move = key.GetComponentInChildren<Movement>();
+        if (move == null) return;
 
-        move.ChangeSvD(this.directionUp, this.speed);
+        move.spawnPoint = gameObject;
         move.posTarget = this.FindTarget();
     }
 
