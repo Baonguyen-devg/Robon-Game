@@ -4,11 +4,16 @@ namespace DefaultNamespace
 {
     public class RobonScore : MonoBehaviour
     {
-        public int coinHave = 0;
+        public float coinHave = 0;
+
+        private void Start()
+        {
+            this.coinHave = SaveScore.instance.score.number;
+        }
 
         public void Collect(int scoreAdd)
         {
-            coinHave += scoreAdd;
+            this.coinHave += scoreAdd;
         }
     }
 }
