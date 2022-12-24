@@ -35,7 +35,7 @@ namespace Box
                 this.robonCollect.isCollected = false;
                 this.RestoreCollected();
                 GameManager.Instance.robonRespawn.RobonCompleteBox();
-                GameManager.Instance.robonScore.Collect(GameManager.Instance.BoxScore);
+                //GameManager.Instance.robonScore.Collect(GameManager.Instance.BoxScore);
 
                 //Do animaiton
                 this.gameObject.SetActive(false);

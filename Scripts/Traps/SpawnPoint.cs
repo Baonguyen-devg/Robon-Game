@@ -24,11 +24,11 @@ public class SpawnPoint : RepeatMonobehaviour
     protected float nextSpawn;
     protected int countSpawn;
 
-    [Header("Coin")]
-
-    [SerializeField] protected GameObject coinPrefab;
-    [SerializeField] protected bool haveCoin;
-    [SerializeField] protected float rateHaveCoin;
+    // [Header("Coin")]
+    //
+    // [SerializeField] protected GameObject coinPrefab;
+    // [SerializeField] protected bool haveCoin;
+    // [SerializeField] protected float rateHaveCoin;
 
     protected float timeSpawnCoin;
 
@@ -88,7 +88,7 @@ public class SpawnPoint : RepeatMonobehaviour
         this.Move(key);
         this.CheckConveyer(key);
 
-        if (this.haveCoin) this.SpawnCoin(key);
+        //if (this.haveCoin) this.SpawnCoin(key);
     }
 
     protected virtual void Move(GameObject key)
@@ -103,14 +103,14 @@ public class SpawnPoint : RepeatMonobehaviour
         move.posTarget = this.FindTarget();
     }
 
-    protected virtual void SpawnCoin(GameObject key)
-    {
-        if (Time.time < this.timeSpawnCoin) return;
-        this.timeSpawnCoin = Time.time + this.rateHaveCoin;
-
-        GameObject coin = Instantiate(this.coinPrefab, key.transform);
-        coin.SetActive(true);
-    }
+    // protected virtual void SpawnCoin(GameObject key)
+    // {
+    //     if (Time.time < this.timeSpawnCoin) return;
+    //     this.timeSpawnCoin = Time.time + this.rateHaveCoin;
+    //
+    //     GameObject coin = Instantiate(this.coinPrefab, key.transform);
+    //     coin.SetActive(true);
+    // }
 
     protected virtual void SpawnSpike()
     {
