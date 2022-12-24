@@ -13,6 +13,11 @@ namespace DefaultNamespace
             this.hp = hpMax;
         }
 
+        public void ReBorn()
+        {
+            this.hp = hpMax;
+        }
+        
         public void Deduct(int hpDeduct)
         {
             this.hp -= hpDeduct;

@@ -12,22 +12,21 @@ namespace DefaultNamespace
         [Header("SettingData")]
         [SerializeField] protected float timeMax = 30f;
         public float TimeMax { get => timeMax; }
-        [SerializeField] protected int coinScore = 10;
-        public int CoinScore { get => coinScore; }
-        [SerializeField] protected int boxScore = 50;
-        public int BoxScore { get => boxScore; }
+        //[SerializeField] protected int coinScore = 10;
+        //public int CoinScore { get => coinScore; }
+        //[SerializeField] protected int boxScore = 50;
+        //public int BoxScore { get => boxScore; }
         [Header("LoadComponents")]
-        public RobonCollect robonCollect;
-        public BinController binController;
-        [SerializeField] protected BoxController boxController;
+        //public RobonCollect robonCollect;
+        //public BinController binController;
+        //[SerializeField] protected BoxController boxController;
         public TimeBar timeBar;
-        public RobonScore robonScore;
+        //public RobonScore robonScore;
         public RobonRespawn robonRespawn;
         public RobonHealth robonHealth;
-        public Transform loseGame;
-        public Transform winGame;
-        public Transform pauseGame;
-        public GameObject robon;
+        public Transform loseGameUI;
+        public Transform winLevelUI;
+        private bool isWin = false;
         
         protected override void Awake()
         {
@@ -39,10 +38,10 @@ namespace DefaultNamespace
         {
             base.LoadComponents();
             this.LoadTimeBar();
-            this.LoadRobonCollet();
-            this.LoadBinController();
-            this.LoadBoxCompleted();
-            this.LoadRobonScore();
+            // this.LoadRobonCollet();
+            // this.LoadBinController();
+            // this.LoadBoxCompleted();
+            // this.LoadRobonScore();
             this.LoadRobonRespawn();
             this.LoadRobonHeath();
         }
@@ -58,29 +57,29 @@ namespace DefaultNamespace
             if (this.robonHealth != null) return;
             this.robonHealth = GameObject.Find("RobonHealth").GetComponent<RobonHealth>();
         }
-        protected virtual void LoadRobonCollet()
-        {
-            if (this.robonCollect != null) return;
-            this.robonCollect = GameObject.Find("RobonCollect").GetComponent<RobonCollect>();
-        }
+        // protected virtual void LoadRobonCollet()
+        // {
+        //     if (this.robonCollect != null) return;
+        //     this.robonCollect = GameObject.Find("RobonCollect").GetComponent<RobonCollect>();
+        // }
         
-        protected virtual void LoadBoxCompleted()
-        {
-            if (this.boxController != null) return;
-            this.boxController = GameObject.Find("BoxManager").GetComponent<BoxController>();
-        }
+        // protected virtual void LoadBoxCompleted()
+        // {
+        //     if (this.boxController != null) return;
+        //     this.boxController = GameObject.Find("BoxManager").GetComponent<BoxController>();
+        // }
         
-        protected virtual void LoadBinController()
-        {
-            if (this.binController != null) return;
-            this.binController = GameObject.Find("BinManager").GetComponent<BinController>();
-        }
+        // protected virtual void LoadBinController()
+        // {
+        //     if (this.binController != null) return;
+        //     this.binController = GameObject.Find("BinManager").GetComponent<BinController>();
+        // }
         
-        protected virtual void LoadRobonScore()
-        {
-            if (this.robonScore != null) return;
-            this.robonScore = GameObject.Find("RobonScore").GetComponent<RobonScore>();
-        }
+        // protected virtual void LoadRobonScore()
+        // {
+        //     if (this.robonScore != null) return;
+        //     this.robonScore = GameObject.Find("RobonScore").GetComponent<RobonScore>();
+        // }
         
         protected virtual void LoadRobonRespawn()
         {
@@ -90,26 +89,32 @@ namespace DefaultNamespace
 
         private void FixedUpdate()
         {
-            this.WinLevel();
+            this.isWinLevel();
             this.LoseGame();
         }
         
         
-        protected virtual void WinLevel()
+        protected virtual void isWinLevel()
         {
-            if (boxController.isFcompleted && boxController.isPcompleted && boxController.isTcompleted)
+            if (isWin == true)
             {
-                //Win game
+                winLevelUI.gameObject.SetActive(true);                
+                //DoAnimationWinGame
             }
+        }
+
+        public void WinLevel()
+        {
+            this.isWin = true;
         }
 
         protected virtual void LoseGame()
         {
-            if (IsLose() && this.loseGame != null)
+            if (IsLose() && this.loseGameUI != null)
             {
-                loseGame.gameObject.SetActive(true);
+                loseGameUI.gameObject.SetActive(true);
                 // Do animation
-                Destroy(robon);
+                this.robonRespawn.RobonMoveToDeathZone();
             }
         }
         

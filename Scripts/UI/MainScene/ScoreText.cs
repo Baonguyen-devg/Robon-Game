@@ -28,7 +28,7 @@ namespace DefaultNamespace.UI
 
         private void UpdateScore()
         {
-            scoreText.text = "Score: " + GameManager.Instance.robonScore.coinHave;
+            //scoreText.text = "Score: " + GameManager.Instance.robonScore.coinHave;
         }
     }
 }

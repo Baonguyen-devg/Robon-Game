@@ -6,7 +6,7 @@ public class CoinCollider : ReceiverCircleCollider
 {
     public override void Received()
     {
-        GameManager.Instance.robonScore.Collect(GameManager.Instance.CoinScore);
+        //GameManager.Instance.robonScore.Collect(GameManager.Instance.CoinScore);
         Debug.Log("coin");
         Destroy(gameObject);
     }

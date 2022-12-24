@@ -6,6 +6,7 @@ namespace DefaultNamespace
     {
         [SerializeField] protected Transform robonTransform;
         [SerializeField] protected GameObject robonRespawnPoint;
+        [SerializeField] protected GameObject robonAfterDiePoint;
 
         protected override void LoadComponents()
         {
@@ -31,7 +32,12 @@ namespace DefaultNamespace
             this.robonTransform.position = robonRespawnPoint.transform.position;
             GameManager.Instance.robonHealth.Deduct(1);
             GameManager.Instance.timeBar.SetMaxTime(GameManager.Instance.TimeMax);
-            this.RespawnBin();
+            //this.RespawnBin();
+        }
+
+        public void RobonMoveToDeathZone()
+        {
+            this.robonTransform.position = this.robonAfterDiePoint.transform.position;
         }
         
         
@@ -42,28 +48,28 @@ namespace DefaultNamespace
             GameManager.Instance.timeBar.SetMaxTime(GameManager.Instance.TimeMax);
         }
 
-        protected virtual void RespawnBin()
-        {
-            GameManager.Instance.robonCollect.isCollected = false;
-            
-            if (GameManager.Instance.binController.isFbinCollected == true)
-            {
-                GameManager.Instance.binController.fBin.gameObject.SetActive(true);
-                GameManager.Instance.binController.isFbinCollected = false;
-            }
-
-            if (GameManager.Instance.binController.isPbinCollected == true)
-            {
-                GameManager.Instance.binController.pBin.gameObject.SetActive(true);
-                GameManager.Instance.binController.isPbinCollected = false;
-            }
-
-            if (GameManager.Instance.binController.isTbinCollected == true)
-            {
-                GameManager.Instance.binController.tBin.gameObject.SetActive(true);
-                GameManager.Instance.binController.isTbinCollected = false;
-            }
-        }
+        // protected virtual void RespawnBin()
+        // {
+        //     GameManager.Instance.robonCollect.isCollected = false;
+        //     
+        //     if (GameManager.Instance.binController.isFbinCollected == true)
+        //     {
+        //         GameManager.Instance.binController.fBin.gameObject.SetActive(true);
+        //         GameManager.Instance.binController.isFbinCollected = false;
+        //     }
+        //
+        //     if (GameManager.Instance.binController.isPbinCollected == true)
+        //     {
+        //         GameManager.Instance.binController.pBin.gameObject.SetActive(true);
+        //         GameManager.Instance.binController.isPbinCollected = false;
+        //     }
+        //
+        //     if (GameManager.Instance.binController.isTbinCollected == true)
+        //     {
+        //         GameManager.Instance.binController.tBin.gameObject.SetActive(true);
+        //         GameManager.Instance.binController.isTbinCollected = false;
+        //     }
+        // }
         
         
     }
